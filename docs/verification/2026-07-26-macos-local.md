@@ -17,12 +17,12 @@
 
 | 命令 | 结果 |
 | --- | --- |
-| `python -m pytest` | 16 passed |
+| `python -m pytest` | 18 passed |
 | `npm run typecheck` | passed |
 | `npm run test` | 2 passed |
 | `npm run build` | passed，production assets 成功生成 |
 | `python -m compileall -q src scripts workspace tests` | passed |
-| `python scripts/smoke_runtime.py` | prediction 7；12 layers；reference/live tensors identical |
+| `python scripts/smoke_runtime.py` | prediction 7；12 layers；本机 max absolute numeric delta `0.0` |
 | `git diff --check` | passed |
 
 Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation warning；它来自测试工具适配层，不影响 runtime。该 warning 未被隐藏。
@@ -37,7 +37,7 @@ Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation
 - `assets/models/mnist_cnn.pth` 为 raw `state_dict`，约 84 KB。
 - 固定 MNIST 数字 7 被真实识别为 7。
 - `assets/traces/reference.json` 由保存后的输入像素、标准模型和真实本地 inference 生成。
-- smoke check 使用同一保存输入和同一 `.pth` 重新实时推理，12 层 tensor、概率与预测逐项相同。
+- smoke check 使用同一保存输入和同一 `.pth` 重新实时推理。本机 12 层 tensor、概率与预测逐项相同；跨平台 CPU kernel 验证固定 schema、layer ID、shape、summary、输入和预测严格一致，并要求所有数值的 absolute delta 不超过 `1e-4`。
 
 ## 浏览器交互与视觉 QA
 

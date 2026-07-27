@@ -64,5 +64,7 @@ def test_runtime_does_not_fall_back_for_missing_route_model(tmp_path: Path) -> N
         runtime.load("practical")
 
     assert caught.value.status_code == 404
-    assert "practical/model.pth" in caught.value.detail
+    missing_path = Path(caught.value.detail.removeprefix("missing file: "))
+    assert missing_path.parent.name == "practical"
+    assert missing_path.name == "model.pth"
     assert runtime.status()["loaded"] is False
