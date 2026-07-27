@@ -5,6 +5,7 @@ This repository uses a single-context domain documentation layout.
 ## Before exploring, read these
 
 - **`docs/product/GLOBAL-STRATEGY.md`** — read before product, architecture, implementation-planning, or delivery work.
+- **`docs/product/IMPLEMENTATION-SPEC.md`** — read before changing runtime, model, API, Web, challenge, or packaging behavior.
 - **`CONTEXT.md`** at the repo root.
 - **`docs/adr/`** — read ADRs that touch the area you're about to work in.
 
@@ -15,9 +16,12 @@ If either does not exist, proceed silently. Do not flag its absence or suggest c
 ```text
 /
 ├── CONTEXT.md
-├── docs/adr/
-│   ├── 0001-example-decision.md
-│   └── 0002-another-decision.md
+├── docs/
+│   ├── adr/
+│   ├── product/
+│   │   ├── GLOBAL-STRATEGY.md
+│   │   └── IMPLEMENTATION-SPEC.md
+│   └── verification/
 └── src/
 ```
 

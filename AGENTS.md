@@ -10,4 +10,4 @@ The repo uses the five default canonical triage labels. See `docs/agents/triage-
 
 ### Domain docs
 
-This repo uses a single-context layout. Read `docs/product/GLOBAL-STRATEGY.md` before product or architecture work. See `docs/agents/domain.md`.
+This repo uses a single-context layout. Read `docs/product/GLOBAL-STRATEGY.md` before product or architecture work and `docs/product/IMPLEMENTATION-SPEC.md` before implementation changes. See `docs/agents/domain.md`.

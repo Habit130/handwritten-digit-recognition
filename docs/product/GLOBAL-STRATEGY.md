@@ -137,16 +137,6 @@ Web 使用 TypeScript；本地应用与机器学习核心使用 Python/PyTorch�
 - 完整 i18n、英文课程副本
 - GPU 作为必要运行条件
 
-## 后续细化但尚未决定
+## 实现规格
 
-- 挑战难度总数、挑战路线名称、学习章节数量与每章任务
-- LeNet-style CNN 的精确 channel、kernel、维度与训练超参数
-- 标准输入的精确预处理参数和鼠标手写归一化规则
-- 网络展示契约、参考轨迹与实时轨迹的序列化格式
-- TypeScript Web、Python API 的具体框架与本地通信协议
-- 项目目录布局、预构建 Web 资产的仓库或 release packaging
-- Python 版本、环境管理工具与 lockfile 方案
-- 正式桌面浏览器矩阵、最低窗口尺寸和动画性能预算
-- 动态叙事 storyboard、视觉风格与具体交互设计
-
-这些项目必须在进入相应实现前被单独确认或形成实现规格；不得推翻本文已经接受的全局边界。
+首个版本的挑战路线数量、精确网络、输入预处理、trace schema、技术栈、API、目录和桌面 Web 信息架构已经在 [`IMPLEMENTATION-SPEC.md`](IMPLEMENTATION-SPEC.md) 中冻结。实现规格只落实本文已经接受的边界，不改变全局产品方向。
