@@ -27,6 +27,18 @@
 
 Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation warning；它来自测试工具适配层，不影响 runtime。该 warning 未被隐藏。
 
+## GitHub Actions CPU matrix
+
+Commit `3c4b437` 的 [CI run 30229455296](https://github.com/Habit130/handwritten-digit-recognition/actions/runs/30229455296) 全部通过：
+
+- Python 3.11 · macOS：tests 与真实模型 smoke passed
+- Python 3.11 · Windows：tests 与真实模型 smoke passed
+- Python 3.11 · Linux：tests 与真实模型 smoke passed
+- Python 3.12 · Linux：tests 与真实模型 smoke passed
+- Web：locked install、typecheck、tests、production rebuild 和 committed asset diff passed
+
+GitHub 对 `actions/checkout@v4`、`actions/setup-python@v5` 和 `actions/setup-node@v4` 发出 Node.js 20 action runtime deprecation annotation，并在 runner 中强制使用 Node.js 24。该 annotation 来自上游 GitHub Action 版本，不是学习实验室 runtime failure。
+
 ## 模型与固定资产
 
 - 标准训练脚本运行 3 epochs。
@@ -69,5 +81,5 @@ Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation
 
 ## 未覆盖
 
-- GitHub Actions 中的 macOS、Windows、Linux CPU matrix 尚需以对应 workflow run 为证据。
+- Windows 与 Linux 的真实桌面浏览器视觉 QA 和终端人工上手流程尚未执行；CI 只证明这些平台的安装、tests、CPU 模型加载与 inference smoke。
 - 当前记录不覆盖 MPS 或 CUDA；它们不是首个版本的必要路径。
