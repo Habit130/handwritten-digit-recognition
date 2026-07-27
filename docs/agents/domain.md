@@ -4,6 +4,7 @@ This repository uses a single-context domain documentation layout.
 
 ## Before exploring, read these
 
+- **`docs/product/GLOBAL-STRATEGY.md`** — read before product, architecture, implementation-planning, or delivery work.
 - **`CONTEXT.md`** at the repo root.
 - **`docs/adr/`** — read ADRs that touch the area you're about to work in.
 
