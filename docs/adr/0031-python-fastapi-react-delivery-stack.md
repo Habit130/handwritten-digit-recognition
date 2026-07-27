@@ -15,9 +15,10 @@
 - Web 使用 React、TypeScript 和 Vite，由维护者构建。
 - `web/dist/` 是正式运行资产并提交到仓库；学习者运行产品不需要 Node.js。
 - Python 包、固定教学资产、学习者工作区和预构建 Web 资产保持在同一个仓库。
-- `python -m learning_lab` 是环境配置完成后的统一启动命令。
-- 项目使用一个 `.venv`；安装脚本只负责创建该环境并安装项目锁定的 Python 依赖。
+- 根目录的 `start.command`、`start.cmd` 和 `start.sh` 是面向学习者的平台启动入口，共同调用 `scripts/launch.py`。
+- 启动器在首次运行时创建唯一的项目 `.venv` 并安装锁定依赖，后续直接复用；已有但不完整的环境必须显式失败。
+- `.venv` 中的 `python -m learning_lab` 是启动器使用的内部运行入口。
 
 ## 后果
 
-学习者的运行路径只有 Python；维护者需要维护 Web 源码、lockfile 和已构建资产的一致性。任何缺失的 Web 构建资产都会显式阻止启动，不允许运行时从 CDN 获取替代资产。
+学习者只需操作项目根目录启动入口，实际运行路径仍然只有 Python；维护者需要维护 Web 源码、lockfile 和已构建资产的一致性。任何缺失的 Web 构建资产都会显式阻止启动，不允许运行时从 CDN 获取替代资产。

@@ -17,12 +17,13 @@
 
 | 命令 | 结果 |
 | --- | --- |
-| `python -m pytest` | 18 passed |
+| `python -m pytest` | 25 passed |
 | `npm run typecheck` | passed |
 | `npm run test` | 2 passed |
 | `npm run build` | passed，production assets 成功生成 |
 | `python -m compileall -q src scripts workspace tests` | passed |
 | `python scripts/smoke_runtime.py` | prediction 7；12 layers；本机 max absolute numeric delta `0.0` |
+| `./start.command --no-browser` + `GET /api/health` | 根目录启动成功；HTTP 200；`Ctrl+C` 干净停止 |
 | `git diff --check` | passed |
 
 Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation warning；它来自测试工具适配层，不影响 runtime。该 warning 未被隐藏。

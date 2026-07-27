@@ -25,7 +25,8 @@ browser
 - 本地 API：FastAPI `0.140.0`、Uvicorn `0.51.0`
 - Web：React `19.2.8`、TypeScript `7.0.2`、Vite `8.1.5`
 - 运行地址：`127.0.0.1:8000`
-- 正式启动：`python -m learning_lab`
+- 正式启动：项目根目录的 `start.command`（macOS）、`start.cmd`（Windows）或 `start.sh`（Linux）
+- 内部运行入口：项目 `.venv` 中的 `python -m learning_lab`
 - Web 运行资产：`web/dist/`，不得使用 CDN
 
 ## 精确网络与输入
@@ -152,6 +153,7 @@ Web 只有三个一级工作区：
 以下情况必须阻止当前动作并保留原始错误：
 
 - Python 版本不兼容；
+- 项目 `.venv` 存在但解释器不完整；
 - `web/dist/` 或固定资产缺失；
 - route 不在 allowlist；
 - 模型文件缺失、不是 raw `state_dict`、参数不兼容或推理失败；

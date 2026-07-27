@@ -26,6 +26,19 @@ jobs:
         run: python -m pip install -e ".[dev]"
       - name: Run Python tests
         run: python -m pytest
+      - name: Verify Unix project launcher
+        if: runner.os != 'Windows'
+        run: |
+          sh -n start.sh start.command
+          if [ "${{ runner.os }}" = "macOS" ]; then
+            ./start.command --launcher-check
+          else
+            ./start.sh --launcher-check
+          fi
+      - name: Verify Windows project launcher
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: start.cmd --launcher-check
       - name: Verify fixed assets and real inference
         run: python scripts/smoke_runtime.py
 

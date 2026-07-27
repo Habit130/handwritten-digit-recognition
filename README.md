@@ -6,31 +6,25 @@
 
 ## 快速开始
 
-需要 Python 3.11 或 3.12。第一次使用先配置一次环境：
+电脑需要安装 Python 3.11 或 3.12。启动入口位于项目根目录，第一次启动会自动创建项目专用 `.venv` 并安装锁定依赖，以后会直接复用该环境；不需要手动激活环境，也不需要安装 Node.js。
 
-### macOS / Linux
+### macOS
 
-```bash
-python3.11 scripts/setup.py
-source .venv/bin/activate
-python -m learning_lab
-```
+在 Finder 中双击 `start.command`。
 
-### Windows PowerShell
+### Windows
 
-```powershell
-py -3.11 scripts/setup.py
-.venv\Scripts\Activate.ps1
-python -m learning_lab
-```
+在文件资源管理器中双击 `start.cmd`。
 
-环境配置完成后，每次只需激活 `.venv` 并运行：
+### Linux
 
 ```bash
-python -m learning_lab
+./start.sh
 ```
 
-学习实验室只监听 `http://127.0.0.1:8000`，默认自动打开浏览器。需要只启动服务时使用 `python -m learning_lab --no-browser`。
+三个入口都会启动完整学习实验室并自动打开浏览器，服务只监听 `http://127.0.0.1:8000`。需要只启动服务时，可在 terminal 中为对应入口追加 `--no-browser`，例如 `./start.sh --no-browser`。
+
+`python -m learning_lab` 是项目环境内的底层运行入口，供维护和排错使用，不是初学者的标准启动步骤。
 
 ## 三档挑战路线
 

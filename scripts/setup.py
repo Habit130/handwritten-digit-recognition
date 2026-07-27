@@ -21,10 +21,8 @@ def main() -> None:
 
     if sys.platform == "win32":
         python = VENV_DIR / "Scripts" / "python.exe"
-        activate = r".venv\Scripts\activate"
     else:
         python = VENV_DIR / "bin" / "python"
-        activate = "source .venv/bin/activate"
 
     print("安装锁定的项目依赖……")
     subprocess.run(
@@ -37,9 +35,7 @@ def main() -> None:
         cwd=REPO_ROOT,
         check=True,
     )
-    print("\n环境配置完成。接下来运行：")
-    print(activate)
-    print("python -m learning_lab")
+    print("\n项目环境配置完成。")
 
 
 if __name__ == "__main__":
