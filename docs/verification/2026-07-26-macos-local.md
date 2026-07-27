@@ -30,11 +30,11 @@ Pytest 产生一条 Starlette `TestClient` 关于未来 `httpx2` 的 deprecation
 
 ## GitHub Actions CPU matrix
 
-Commit `3c4b437` 的 [CI run 30229455296](https://github.com/Habit130/handwritten-digit-recognition/actions/runs/30229455296) 全部通过：
+Commit `2fff071` 的 [CI run 30229935193](https://github.com/Habit130/handwritten-digit-recognition/actions/runs/30229935193) 全部通过：
 
-- Python 3.11 · macOS：tests 与真实模型 smoke passed
-- Python 3.11 · Windows：tests 与真实模型 smoke passed
-- Python 3.11 · Linux：tests 与真实模型 smoke passed
+- Python 3.11 · macOS：tests、`start.command` 入口与真实模型 smoke passed
+- Python 3.11 · Windows：tests、`start.cmd` 入口与真实模型 smoke passed
+- Python 3.11 · Linux：tests、`start.sh` 入口与真实模型 smoke passed
 - Python 3.12 · Linux：tests 与真实模型 smoke passed
 - Web：locked install、typecheck、tests、production rebuild 和 committed asset diff passed
 
